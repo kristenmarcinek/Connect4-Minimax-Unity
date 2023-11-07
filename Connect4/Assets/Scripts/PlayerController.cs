@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] protected GameObject redPiece;
+    [SerializeField] protected GameObject orangePiece;
     [SerializeField] protected Tilemap gameBoard;
 
     // Start is called before the first frame update
@@ -27,6 +27,6 @@ public class PlayerController : MonoBehaviour
 
         Vector3 cellCenter = gameBoard.GetCellCenterWorld(cellPosition);
         
-        Instantiate(redPiece, cellCenter, Quaternion.identity);
+        Instantiate(orangePiece, cellCenter, Quaternion.identity);
     }
 }
