@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class GameManager : MonoBehaviour
+public class ARCHIVEDGameManager : MonoBehaviour
 {
     [SerializeField] protected Tilemap gameBoard;
 

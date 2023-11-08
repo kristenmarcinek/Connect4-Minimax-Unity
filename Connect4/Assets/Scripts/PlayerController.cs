@@ -8,25 +8,36 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected GameObject orangePiece;
     [SerializeField] protected Tilemap gameBoard;
 
+  
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    void OnMouseDown() {
+
+
+    void OnMouseDown()
+    {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         Vector3Int cellPosition = gameBoard.WorldToCell(mousePosition);
 
         Vector3 cellCenter = gameBoard.GetCellCenterWorld(cellPosition);
-        
+
         Instantiate(orangePiece, cellCenter, Quaternion.identity);
+
+        Debug.Log(orangePiece.transform.position);
+
+      
     }
+
+    
 }
