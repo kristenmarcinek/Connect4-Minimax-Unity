@@ -5,10 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] protected GameObject orangePiece;
-    [SerializeField] protected Tilemap gameBoard;
-
-  
+    [SerializeField] protected Color playerColor = new Color(255, 129, 0, 255);
 
     // Start is called before the first frame update
     void Start()
@@ -26,17 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseDown()
     {
-        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        Vector3Int cellPosition = gameBoard.WorldToCell(mousePosition);
-
-        Vector3 cellCenter = gameBoard.GetCellCenterWorld(cellPosition);
-
-        Instantiate(orangePiece, cellCenter, Quaternion.identity);
-
-        Debug.Log(orangePiece.transform.position);
-
-      
+        GetComponent<Renderer>().material.color = playerColor;
     }
 
     
